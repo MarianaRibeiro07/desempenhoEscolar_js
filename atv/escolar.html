@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        
+        body{ font-family: sans-serif; text-align: center; padding: 50px; background-color: white;}
+        .painel{background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
+        input{padding: 10px; width: 80px; font-size: 18px;}
+        button{padding: 10px 20px; cursor: pointer; background: green; color: white; border: none; border-radius: 5px;}
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h2>Classificador de Desempenho Escolar</h2>
+        <p>Adicione sua nota: <strong>de 0 a 10</strong></p>
+        <input type="number" id="nota" placeholder="Nota">
+        <button onclick="verificarNota()">Verificar nota</button>
+        <h3 id="msg"></h3>
+    </div>
+
+    <script>
+        function verificarNota(){
+            let notaTexto = document.getElementById('nota').value;
+            let nome= Number (notaTexto)
+            let display = document.getElementById('msg');
+
+            if(notaTexto >= 9){
+                display.innerHTML= "Desempenho: Excelente!";
+                display.style.color= "blue";
+            }else if(notaTexto >= 7){
+                display.innerHTML= "Desempenho: Bom!";
+                display.style.color= "green";
+            }
+            else{
+                display.innerHTML= "Desempenho: Insuficiente.";
+                display.style.color= "red"
+            }
+        }
+    </script>
+</body>
+</html>
